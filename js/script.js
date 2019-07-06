@@ -28,16 +28,19 @@ for(let activeArticle of activeArticles){
 
   /*[DONE]get 'href' attribute frorm the clicked link */
 
-const articleSelector = clickedElement.getAttribute('href')
-  console.log(articleSelector)
+const articleSelector = clickedElement.getAttribute('href');
+  console.log(articleSelector);
 
 
   /*[DONE] find the correct article uisng the selector (value of 'herf' attribute) */
 
-const targetArticle = document.querySelector(articleSelector)
-  console.log(targetArticle)
+const targetArticle = document.querySelector(articleSelector);
+  console.log(targetArticle);
 
-  /* add class 'active' to the correct article */ 
+  /*[DONE] add class 'active' to the correct article */ 
+
+targetArticle.classList.add('active');
+  console.log(targetArticle);
 
 }
 
