@@ -68,11 +68,12 @@ function generateTitleLinks()
 
   const articles = document.querySelectorAll('.post');
 
-  
+  let html =''; 
 
-    for(let article of articles){
-      console.log(article);
-    }
+  for(let article of articles)
+    {
+    console.log(article);
+      
 
   /* get the article id */
 
@@ -96,7 +97,12 @@ function generateTitleLinks()
 
    titleList.insertAdjacentHTML('afterbegin','<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>')
       console.log(titleList)
-  
+
+      html = html + linkHTML;
+      console.log(html)
+    }
+
+    titleList.innerHTML = html;
 
 }
 
