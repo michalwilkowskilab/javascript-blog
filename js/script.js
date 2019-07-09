@@ -66,29 +66,34 @@ function generateTitleLinks()
 
   const articles = document.querySelectorAll('.post');
 
+  let html =
+
     for(let article of articles){
       console.log(article);
     }
 
   /* get the article id */
 
-  const articleId = optArticleSelector.getAttribute('id');
+  const articleId = document.querySelector(optArticleSelector); 
+    articleId.getAttribute('id');  
       console.log(articleId);
 
   /* find the title element */
 
-  const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+  const articleTitle = document.querySelector(optTitleSelector).innerHTML;
       console.log(articleTitle)
 
   /* get the title from the title element */
 
   /* create HTML of the link */
 
-  const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTiltle + '</span></a></li>';
+  const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
     console.log(linkHTML) 
 
   /* insert link into titleList */
 
+   titleList.insertAdjacentHTML('afterbegin','<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>')
+      console.log(titleList)
   
 
 }
@@ -98,4 +103,3 @@ function clearMessages(){
 }
 
 generateTitleLinks();
-
