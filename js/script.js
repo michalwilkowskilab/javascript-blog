@@ -22,6 +22,8 @@ function titleClickHandler(event){
 
   const activeArticles = document.querySelectorAll('.post.active');
 
+
+
   for(let activeArticle of activeArticles){
   activeArticle.classList.remove('active');
   }
@@ -66,7 +68,7 @@ function generateTitleLinks()
 
   const articles = document.querySelectorAll('.post');
 
-  let html =
+  
 
     for(let article of articles){
       console.log(article);
