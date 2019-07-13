@@ -22,8 +22,8 @@ function titleClickHandler(event) {
 
   const activeArticles = document.querySelectorAll('.post.active');
 
-  for (let activeArticle of activeArticles) {
-    activeArticle.document.remove('active');
+  for (let activeArticle of activeArticles){
+    activeArticle.classList.remove('active');
   }
 
   /*[DONE]get 'href' attribute from the clicked link */
@@ -141,14 +141,18 @@ function generateTags(){
     for(let tag of articleTagsArray){
     console.log(tag);
       /* generate HTML of the link */
-      const linkHTML = '<li><a href="'+ articleTags +'">'+ articleTagsArray +'</a></li>';
-      console.log(linkHTML)
+      const linkHTML = '<li href="tag-'+ tag +'">'+ tag +'<a></li>';
+      console.log(linkHTML);
       /* add generated code to html variable */
-    
+      article.insertAdjacentHTML('beforeend', linkHTML);
+      console.log(article);
+
+      html = html + linkHTML;
+      console.log(html);
     /* END LOOP: for each tag */
     }
     /* insert HTML of all the links into the tags wrapper */
-
+     tagLinks.innerHTML = html;
   /* END LOOP: for every article: */
   }
 }
