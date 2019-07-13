@@ -141,11 +141,11 @@ function generateTags(){
     for(let tag of articleTagsArray){
     console.log(tag);
       /* generate HTML of the link */
-
+      
       /* add generated code to html variable */
-    }
+    
     /* END LOOP: for each tag */
-
+    }
     /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
