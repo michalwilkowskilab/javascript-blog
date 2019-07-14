@@ -42,8 +42,6 @@ function titleClickHandler(event) {
   targetArticle.classList.add('active');
   console.log(targetArticle);
 }
-
-const optArticleTagsSelector = '.post-tags .list';
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
@@ -112,6 +110,8 @@ function clearMessages() {
 
 generateTitleLinks();
 
+const optArticleTagsSelector = '.post-tags .list';
+
 function generateTags(){
   
   /*[DONE] find all articles */
@@ -123,7 +123,7 @@ function generateTags(){
   console.log(article);
 
     /*[DONE] find tags wrapper */
-      const tagLinks = article.querySelectorAll(optArticleTagsSelector);
+      const tagLinks = article.querySelector(optArticleTagsSelector);
       console.log(tagLinks);
   
     /*[DONE] make html variable with empty string */
@@ -141,20 +141,20 @@ function generateTags(){
     for(let tag of articleTagsArray){
     console.log(tag);
       /* generate HTML of the link */
-      const linkHTML = '<li href="tag-'+ tag +'">'+ tag +'<a></li>';
+      const linkHTML = '<li><a href="tag-'+ tag +'">'+ tag +'</a></li>';
       console.log(linkHTML);
       /* add generated code to html variable */
-      article.insertAdjacentHTML('beforeend', linkHTML);
-      console.log(article);
-
       html = html + linkHTML;
       console.log(html);
     /* END LOOP: for each tag */
     }
     /* insert HTML of all the links into the tags wrapper */
-     tagLinks.innerHTML = html;
-  /* END LOOP: for every article: */
+    tagLinks.insertAdjacentHTML('beforeend', html)
+    console.log(tagLinks)
+    
+    /* END LOOP: for every article: */
   }
+ 
 }
 
 generateTags();
