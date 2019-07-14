@@ -204,12 +204,17 @@ function tagClickHandler(event){
 
 function addClickListenersToTags(){
   /* find all links to tags */
+  const links = document.querySelectorAll(optArticleTagsSelector);
+  console.log(links);
 
   /* START LOOP: for each link */
+  for(let link of links){
 
     /* add tagClickHandler as event listener for that link */
+    link.addEventListener('click', tagClickHandler)
 
   /* END LOOP: for each link */
+  }
 }
 
 addClickListenersToTags();
