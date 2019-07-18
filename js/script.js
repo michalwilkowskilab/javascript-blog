@@ -231,3 +231,15 @@ function addClickListenersToTags(){
 }
 
 addClickListenersToTags();
+
+const optArticleAuthors = ".post-author"
+
+function generateAutors(){
+
+  /* Clear authors in html */
+  const names = document.querySelector(optArticleAuthors);
+  names.innerHTML = "";
+  console.log(names);
+}
+
+generateAutors();
