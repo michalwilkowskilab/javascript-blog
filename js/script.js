@@ -111,6 +111,8 @@ function clearMessages() {
 generateTitleLinks();
 
 const optArticleTagsSelector = '.post-tags .list';
+const optArticleTagsElementSelector = '.post-tags .list li';
+
 
 function generateTags(){
   
@@ -141,7 +143,7 @@ function generateTags(){
     for(let tag of articleTagsArray){
     console.log(tag);
       /* generate HTML of the link */
-      const linkHTML = '<li><a href="tag-'+ tag +'">'+ tag +'</a></li>';
+      const linkHTML = '<li><a href="#tag-'+ tag +'">'+ tag +'</a></li>';
       console.log(linkHTML);
       /* add generated code to html variable */
       html = html + linkHTML;
@@ -159,17 +161,26 @@ function generateTags(){
 
 generateTags();
 
+
+
 function tagClickHandler(event){
   /* prevent default action for this event */
   event.preventDefault();
 
   /* make new constant named "clickedElement" and give it the value of "this" */
   const clickedElement = this;
-  console.log('Tag was clicked', event);
+  console.log('Tag was clicked', clickedElement);
 
   /* make a new constant "href" and read the attribute "href" of the clicked element */
-  const href = clickedElement.getAttribute('href');
-  console.log(href);
+  const link = clickedElement.querySelector('a[href^="#tag-"]');
+  console.log(link);
+
+  const href = link.getAttribute('href');
+  console.log('href');
+
+  
+
+ 
 
   /* make a new constant "tag" and extract tag from the "href" constant */
   const tag = href.replace('#tag-', '');
@@ -202,9 +213,11 @@ function tagClickHandler(event){
   generateTitleLinks('[data-tags~="' + tag +'"]');
 }
 
+
+
 function addClickListenersToTags(){
   /* find all links to tags */
-  const links = document.querySelectorAll(optArticleTagsSelector)
+  const links = document.querySelectorAll(optArticleTagsElementSelector)
   console.log(links);
 
   /* START LOOP: for each link */
