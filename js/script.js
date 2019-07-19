@@ -236,10 +236,41 @@ const optArticleAuthors = ".post-author"
 
 function generateAutors(){
 
-  /* Clear authors in html */
-  const names = document.querySelector(optArticleAuthors);
-  names.innerHTML = "";
-  console.log(names);
+  /* find class active in "article"*/
+  const activeArticles = document.querySelectorAll('.post.active')
+  console.log('bla bla', activeArticles);
+
+  /* make LOOP for articles and remove class active*/
+  for(let activeArticle of activeArticles){
+    activeArticle.classList.remove('active');
+    console.log(activeArticle);
+  }
+
+  /* find authors text in html */
+  const names = document.querySelectorAll(optArticleAuthors);
+  console.log('dupa', names);
+
+  /* make a LOOP and remove authors from html*/
+  for(let name of names){
+    name.innerHTML = '';
+  }
+
+  /*find authors wraper*/
+  const authorsName = document.querySelector(optArticleAuthors);
+  console.log(authorsName);
+
+  /* make html variable with empty string*/
+  let html ='';
+
+  /* find data-author in html */
+  const dataAuthor = document.querySelector(optArticleSelector);
+  console.log(dataAuthor);
+
+  /*get tags from data-author*/
+  const authorsData = dataAuthor.getAttribute('data-author');
+  console.log('ksywki', authorsData);
+
+
 }
 
 generateAutors();
