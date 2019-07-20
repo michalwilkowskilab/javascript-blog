@@ -264,9 +264,16 @@ function generateAutors(){
   /*LOOP for all articles*/
   for(let author of authors){
 
-    /*find athors warper*/
+    /*find authors wraper*/
     const authorsWraper = author.querySelector(optArticleAuthors);
     console.log('WRAPER', authorsWraper);
+
+    /*[DONE] make html variable with empty string */
+    let html = '';
+
+    /*get tags from data-auhtor attribute */
+    const dataAuthor = author.getAttribute('data-author');
+    console.log('AUTORZYNA', dataAuthor);
   }
   
   
