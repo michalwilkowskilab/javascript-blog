@@ -42,6 +42,7 @@ function titleClickHandler(event) {
   targetArticle.classList.add('active');
   console.log(targetArticle);
 }
+
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
@@ -110,6 +111,7 @@ function clearMessages() {
 
 generateTitleLinks();
 
+
 const optArticleTagsSelector = '.post-tags .list';
 const optArticleTagsElementSelector = '.post-tags .list li';
 
@@ -120,7 +122,7 @@ function generateTags(){
  const articles = document.querySelectorAll(optArticleSelector);
  console.log(articles);
 
-  /*[DONE START LOOP: for every article: */
+  /*[DONE] START LOOP: for every article: */
   for(let article of articles){
   console.log(article);
 
@@ -254,23 +256,22 @@ function generateAutors(){
   for(let name of names){
     name.innerHTML = '';
   }
+  
+  /*find all articles*/
+  const authors = document.querySelectorAll(optArticleSelector);
+  console.log('ARTYKUŁY', authors);
+  
+  /*LOOP for all articles*/
+  for(let author of authors){
 
-  /*find authors wraper*/
-  const authorsName = document.querySelector(optArticleAuthors);
-  console.log(authorsName);
-
-  /* make html variable with empty string*/
-  let html ='';
-
-  /* find data-author in html */
-  const dataAuthor = document.querySelector(optArticleSelector);
-  console.log(dataAuthor);
-
-  /*get tags from data-author*/
-  const authorsData = dataAuthor.getAttribute('data-author');
-  console.log('ksywki', authorsData);
-
-
+    /*find athors warper*/
+    const authorsWraper = author.querySelector(optArticleAuthors);
+    console.log('WRAPER', authorsWraper);
+  }
+  
+  
+  
+  
+  
 }
-
 generateAutors();
