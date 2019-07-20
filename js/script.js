@@ -284,9 +284,23 @@ function generateAutors(){
     console.log(html);
 
     /*inser link into authors wraper*/
-    authorsWraper.insertAdjacentHTML('afterbegin', linkHTML);
+    authorsWraper.insertAdjacentHTML('afterbegin', html);
     console.log(authorsWraper);
     
   }
 }
 generateAutors();
+
+const optArticleAuthorSelector = '.post-author a';
+
+function authorClickHandler(){
+
+}
+
+authorClickHandler();
+
+function ddClickListenersToTags(){
+
+}
+
+ddClickListenersToTags();
