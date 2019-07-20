@@ -180,10 +180,6 @@ function tagClickHandler(event){
   const href = link.getAttribute('href');
   console.log('href');
 
-  
-
- 
-
   /* make a new constant "tag" and extract tag from the "href" constant */
   const tag = href.replace('#tag-', '');
   console.log(tag);
@@ -234,7 +230,7 @@ function addClickListenersToTags(){
 
 addClickListenersToTags();
 
-const optArticleAuthors = ".post-author"
+const optArticleAuthorSelector = ".post-author "
 
 function generateAutors(){
 
@@ -249,7 +245,7 @@ function generateAutors(){
   }
 
   /* find authors text in html */
-  const names = document.querySelectorAll(optArticleAuthors);
+  const names = document.querySelectorAll(optArticleAuthorSelector);
   console.log(names);
 
   /* make a LOOP and remove authors from html*/
@@ -265,7 +261,7 @@ function generateAutors(){
   for(let author of authors){
 
     /*find authors wraper*/
-    const authorsWraper = author.querySelector(optArticleAuthors);
+    const authorsWraper = author.querySelector(optArticleAuthorSelector);
     console.log(authorsWraper);
 
     /*[DONE] make html variable with empty string */
@@ -276,7 +272,7 @@ function generateAutors(){
     console.log(dataAuthor);
 
     /* generate HTML of the link */
-    const linkHTML = '<span>by</span><a>'+ dataAuthor +'</a>';
+    const linkHTML = '<span>by</span><a href="'+ dataAuthor +'">'+ dataAuthor +'</a>';
     console.log(linkHTML);
 
     /* add generated code to html variable */
@@ -289,11 +285,14 @@ function generateAutors(){
     
   }
 }
+
 generateAutors();
 
-const optArticleAuthorSelector = '.post-author a';
+function authorClickHandler(event) {
+  event.preventDefault();
+  const clickedElement = this;
+  console.log('Author was clicked', clickedElement);
 
-function authorClickHandler(){
 
 }
 
