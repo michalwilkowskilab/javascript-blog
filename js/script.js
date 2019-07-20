@@ -240,17 +240,17 @@ function generateAutors(){
 
   /* find class active in "article"*/
   const activeArticles = document.querySelectorAll('.post.active')
-  console.log('bla bla', activeArticles);
+  console.log(activeArticles);
 
-  /* make LOOP for articles and remove class active*/
+  /* make LOOP for articles and add class active*/
   for(let activeArticle of activeArticles){
-    activeArticle.classList.remove('active');
+    activeArticle.classList.add('active');
     console.log(activeArticle);
   }
 
   /* find authors text in html */
   const names = document.querySelectorAll(optArticleAuthors);
-  console.log('dupa', names);
+  console.log(names);
 
   /* make a LOOP and remove authors from html*/
   for(let name of names){
@@ -259,26 +259,34 @@ function generateAutors(){
   
   /*find all articles*/
   const authors = document.querySelectorAll(optArticleSelector);
-  console.log('ARTYKUŁY', authors);
+  console.log(authors);
   
   /*LOOP for all articles*/
   for(let author of authors){
 
     /*find authors wraper*/
     const authorsWraper = author.querySelector(optArticleAuthors);
-    console.log('WRAPER', authorsWraper);
+    console.log(authorsWraper);
 
     /*[DONE] make html variable with empty string */
     let html = '';
 
     /*get tags from data-auhtor attribute */
     const dataAuthor = author.getAttribute('data-author');
-    console.log('AUTORZYNA', dataAuthor);
+    console.log(dataAuthor);
+
+    /* generate HTML of the link */
+    const linkHTML = '<span>by</span><a>'+ dataAuthor +'</a>';
+    console.log(linkHTML);
+
+    /* add generated code to html variable */
+    html = html + linkHTML;
+    console.log(html);
+
+    /*inser link into authors wraper*/
+    authorsWraper.insertAdjacentHTML('afterbegin', linkHTML);
+    console.log(authorsWraper);
+    
   }
-  
-  
-  
-  
-  
 }
 generateAutors();
