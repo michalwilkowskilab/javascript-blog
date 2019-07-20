@@ -298,7 +298,7 @@ function authorClickHandler(event) {
 
 authorClickHandler();
 
-function ddClickListenersToTags(){
+function addClickListenersToTags(){
 
 }
 
