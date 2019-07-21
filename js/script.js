@@ -293,14 +293,14 @@ const optAuthorLinkSelector = '.post-author a';
 
 
 
+
+  
 function authorClickHandler(event){
+  event.preventDefault();
   const clickedElement = this;
   console.log('Auhtor was clicked', clickedElement);
-  event.preventDefault()
-  }
+}
   
-
-authorClickHandler();
 
 function addClickListenersToAuthors() {
   /* find links to authors*/
