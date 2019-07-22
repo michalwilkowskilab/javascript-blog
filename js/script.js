@@ -290,11 +290,6 @@ generateAutors();
 
 const optAuthorLinkSelector =  '.post-author a';
 
-
-
-
-
-  
 function authorClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
@@ -304,21 +299,7 @@ function authorClickHandler(event){
   const href = clickedElement.getAttribute('href');
   console.log(href);
 
-  const authorLink = document.querySelectorAll(optAuthorLinkSelector);
-  console.log(authorLink);
-
-  for (let link of authorLink){
-    link.classList.remove('active')
-  }
-
-  const hrefLinks = document.querySelectorAll(href);
-  console.log(hrefLinks);
-
-
-  for(let author of hrefLinks){
-    author.classList.add('active')
-  }
-  generateTitleLinks('[post-author~="' + href +'"]');
+  generateTitleLinks('[data-author~="' + href + '"]');
 }
   
 
