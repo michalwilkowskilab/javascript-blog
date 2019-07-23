@@ -105,11 +105,13 @@ function generateTitleLinks(customSelector = '') {
 
 }
 
+generateTitleLinks();
+
 function clearMessages() {
   document.getElementById('messages').innerHTML = '';
 }
 
-generateTitleLinks();
+
 
 
 const optArticleTagsSelector = '.post-tags .list';
@@ -303,7 +305,7 @@ function authorClickHandler(event){
 }
   
 
-function addClickListenersToAuthors() {
+function addClickListenersToAuthors(){
   /* find links to authors*/
   const authors = document.querySelectorAll(optAuthorLinkSelector);
   console.log('AUTORZY', authors)
@@ -318,6 +320,3 @@ function addClickListenersToAuthors() {
 }
 
 addClickListenersToAuthors();
-
-
-
