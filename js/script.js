@@ -301,7 +301,7 @@ function authorClickHandler(event){
   const href = clickedElement.getAttribute('href');
   console.log(href);
 
-  generateTitleLinks('[data-author~="' + href + '"]');
+  generateTitleLinks('[data-author ="' + href + '"]');
 }
   
 
