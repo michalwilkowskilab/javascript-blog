@@ -304,8 +304,11 @@ function generateTags(){
     for(let tag of dataTagsArray){
 
       /* generate HTML of the link */
+      const linkHTML = '<li><a href="#">'+ tag +'</a></li>'
+      console.log(linkHTML);
 
       /* add generated code to html variable */
+      html = html + linkHTML;
 
       /* [NEW] check if this link is NOT already in allTags */
       if(allTags.indexOf(linkHTML) == -1){
