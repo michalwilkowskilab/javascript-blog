@@ -100,10 +100,6 @@ body {
   font-style: italic;
 }
 
-.post-author a {
-  margin-left: 5px;
-}
-
 .post-tags {
   display: -ms-flexbox;
   display: flex;

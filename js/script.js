@@ -273,17 +273,21 @@ function addClickListenersToAuthors(){
 
 addClickListenersToAuthors();
 
-const optTagsListSelector = '.tags.list'
+const optTagsListSelector = '.list.tags'
 
 function generateTags(){
   /* [NEW] create a new variable allTags with an empty array */
   let allTags = [];
 
   /* find all articles */
+  const articles = document.querySelectorAll(optArticleSelector);
+  console.log(articles); 
 
   /* START LOOP: for every article: */
-
+  for(let article of articles){
+    console.log(article);
     /* find tags wrapper */
+    
 
     /* make html variable with empty string */
 
@@ -308,7 +312,7 @@ function generateTags(){
     /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
-
+  }
   /* [NEW] find list of tags in right column */
   const tagList = document.querySelector('.tags');
 
