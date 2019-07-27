@@ -90,9 +90,7 @@ function generateTitleLinks(customSelector = '') {
 
 generateTitleLinks();
 
-function clearMessages() {
-  document.getElementById('messages').innerHTML = '';
-}
+
 
 
 
@@ -292,12 +290,18 @@ function generateTags(){
     console.log(tagsWraper);
 
     /* make html variable with empty string */
-
+    let html = '';
+    
     /* get tags from data-tags attribute */
+    const dataTags = article.getAttribute('data-tags');
+    console.log(dataTags);
 
     /* split tags into array */
+    const dataTagsArray = dataTags.split(' ');
+    console.log(dataTagsArray);
 
     /* START LOOP: for each tag */
+    for(let tag of dataTagsArray){
 
       /* generate HTML of the link */
 
@@ -310,7 +314,7 @@ function generateTags(){
       }
 
     /* END LOOP: for each tag */
-
+    }
     /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
@@ -323,3 +327,4 @@ function generateTags(){
 }
 
 generateTags();
+
