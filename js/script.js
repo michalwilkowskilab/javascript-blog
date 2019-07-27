@@ -286,8 +286,10 @@ function generateTags(){
   /* START LOOP: for every article: */
   for(let article of articles){
     console.log(article);
+
     /* find tags wrapper */
-    
+    const tagsWraper = document.querySelectorAll('.list.tags');
+    console.log(tagsWraper);
 
     /* make html variable with empty string */
 
@@ -319,3 +321,5 @@ function generateTags(){
   /* [NEW] add html from allTags to tagList */
   tagList.innerHTML = allTags.join(' ');
 }
+
+generateTags();
