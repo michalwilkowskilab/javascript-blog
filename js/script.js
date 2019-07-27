@@ -274,7 +274,7 @@ addClickListenersToAuthors();
 const optTagsListSelector = '.list.tags'
 
 function generateTags(){
-  /* [NEW] create a new variable allTags with an empty array */
+  /* [NEW] create a new variable allTags with an empty object */
   let allTags = {};
 
   /* find all articles */
@@ -311,9 +311,11 @@ function generateTags(){
       html = html + linkHTML;
 
       /* [NEW] check if this link is NOT already in allTags */
-      if(allTags.indexOf(linkHTML) == -1){
-        /* [NEW] add generated code to allTags array */
-        allTags.push(linkHTML);
+      if(!allTags.hasOwnProperty(tag)){
+        /* [NEW] add generated code to allTags object */
+        allTags[tag] = 1;
+      } else {
+        allTags[tag]++;
       }
     /* END LOOP: for each tag */
     }
