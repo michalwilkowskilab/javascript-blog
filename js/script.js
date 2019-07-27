@@ -286,8 +286,8 @@ function generateTags(){
     console.log(article);
 
     /* find tags wrapper */
-    const tagsWraper = document.querySelectorAll('.list.tags');
-    console.log(tagsWraper);
+    const tagLinks = article.querySelector('.post-tags .list');
+    console.log(tagLinks);
 
     /* make html variable with empty string */
     let html = '';
@@ -304,7 +304,7 @@ function generateTags(){
     for(let tag of dataTagsArray){
 
       /* generate HTML of the link */
-      const linkHTML = '<li><a href="#">'+ tag +'</a></li>'
+      const linkHTML = '<li><a href="#tag-'+ tag +'">'+ tag +'</a></li>';
       console.log(linkHTML);
 
       /* add generated code to html variable */
@@ -315,19 +315,16 @@ function generateTags(){
         /* [NEW] add generated code to allTags array */
         allTags.push(linkHTML);
       }
-
     /* END LOOP: for each tag */
     }
     /* insert HTML of all the links into the tags wrapper */
-
+    tagLinks.insertAdjacentHTML('afterbegin', html);
   /* END LOOP: for every article: */
   }
   /* [NEW] find list of tags in right column */
   const tagList = document.querySelector('.tags');
-
+  console.log(tagList);
   /* [NEW] add html from allTags to tagList */
   tagList.innerHTML = allTags.join(' ');
+
 }
-
-generateTags();
-
