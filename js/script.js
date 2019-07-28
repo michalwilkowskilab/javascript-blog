@@ -274,12 +274,26 @@ addClickListenersToAuthors();
 
 const optTagsListSelector = '.list.tags'
 
+
+
 function calculateTagsParams(tags){
 console.log('KALKULATOR', tags);
 
+  const params = {max: '0', min: '999999'}
+  console.log(params)
+
   for(let tag in tags){
   console.log(tag + ' is used ' + tags[tag] + ' times ');
+
+    if(tags[tag] > params.max){
+    params.max = tags[tag];
+    }
+
+    else if(tags[tag] > params.min){ 
+    params.min = tags[tag];
+    }
   }
+  return params;  
 }
 
 
@@ -340,9 +354,6 @@ function generateTags(){
   /* [NEW] add html from allTags to tagList */
    //tagList.innerHTML = allTags.join(' ');
 
-  const params = {max: '0', min: '999999'}
-  console.log(params)
-
    /* [NEW] add calculate tags parameters */
    const tagsParams = calculateTagsParams(allTags);
    console.log('tagsParams:', tagsParams);
@@ -358,5 +369,4 @@ function generateTags(){
    }
    /* [NEW] add html from allTags to tagList */
    tagList.innerHTML = allTagsHTML;
-} 
-
+}
