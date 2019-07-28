@@ -335,9 +335,15 @@ function generateTags(){
   /* [NEW] add html from allTags to tagList */
    //tagList.innerHTML = allTags.join(' ');
 
+  const params = {max: '0', min: '999999'}
+  console.log(params)
+
    /* [NEW] add calculate tags parameters */
-   const tagsParams = calculateTagsParams(allTags);
+   const tagsParams = calculateTagsParams(allTags);{
    console.log('tagsParams:', tagsParams);
+
+
+   }
 
    /* [NEW] create variable for all links in HTML code */
    let allTagsHTML ='';
