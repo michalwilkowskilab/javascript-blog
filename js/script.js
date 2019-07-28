@@ -275,8 +275,13 @@ addClickListenersToAuthors();
 const optTagsListSelector = '.list.tags'
 
 function calculateTagsParams(tags){
-console.log(tags);
+console.log('KALKULATOR', tags);
+
+  for(let tag in tags){
+  console.log(tag + ' is used ' + tags[tag] + ' times ');
+  }
 }
+
 
 function generateTags(){
   /* [NEW] create a new variable allTags with an empty object */
@@ -339,11 +344,8 @@ function generateTags(){
   console.log(params)
 
    /* [NEW] add calculate tags parameters */
-   const tagsParams = calculateTagsParams(allTags);{
+   const tagsParams = calculateTagsParams(allTags);
    console.log('tagsParams:', tagsParams);
-
-
-   }
 
    /* [NEW] create variable for all links in HTML code */
    let allTagsHTML ='';
@@ -357,3 +359,4 @@ function generateTags(){
    /* [NEW] add html from allTags to tagList */
    tagList.innerHTML = allTagsHTML;
 } 
+
