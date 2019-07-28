@@ -277,7 +277,7 @@ const optTagsListSelector = '.list.tags'
 
 
 function calculateTagsParams(tags){
-console.log('KALKULATOR', tags);
+console.log(tags);
 
   const params = {max: '0', min: '999999'}
   console.log(params)
@@ -288,8 +288,7 @@ console.log('KALKULATOR', tags);
     if(tags[tag] > params.max){
     params.max = tags[tag];
     }
-
-    else if(tags[tag] > params.min){ 
+    else if(tags[tag] < params.min){
     params.min = tags[tag];
     }
   }
