@@ -287,6 +287,7 @@ const normalizedCount = count - params.min;
 const normalizedMax = params.max - params.min;
 const percentage = normalizedCount / normalizedMax;
 const classNumber = Math.floor(percentage * (optCloudClassCount -1) + 1);
+console.log(classNumber);
 }
 
 function generateTags(){
@@ -357,12 +358,11 @@ function generateTags(){
    /* [NEW] START LOOP: for each tag in allTags: */
    for(let tag in allTags){
 
-     const tagLinkHTML = '<li><a class="'+ calculateTagClass(allTags[tag], tagsParams) +'" href ="#tag-'+ tag +'">' + tag + '</a></li>';
+     const tagLinkHTML = '<li><a class="'+ calculateTagClass(allTags[tag], tagsParams) +'" href ="#tag-'+ tag +'">' + tag + '</a></li> (' + allTags[tag] + ') ';
      console.log('tagLinkHTML:', tagLinkHTML);
 
      /*[NEW] generate code of a link and add it to allTagsHTML*/
      allTagsHTML += '<li><a href="#tag-'+ tag +'">'+ tag +'</a></li>' + ' (' + allTags[tag] + ') ';
-
      /*[NEW] END LOOP: for each tag in allTags: */
    }
    /* [NEW] add html from allTags to tagList */
