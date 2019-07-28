@@ -258,8 +258,7 @@ addClickListenersToAuthors();
 
 
 const optTagsListSelector = '.list.tags'
-const optCloudClassCount = 5;
-const optCloudClassPrefix = 'tag-size-'
+const optClouClassPrefix = 'tag-size-'
 
 function calculateTagsParams(tags){
 console.log(tags);
@@ -283,6 +282,7 @@ console.log(tags);
 function calculateTagClass(count, params){
 console.log(count, params);
 
+const optCloudClassCount = 5;
 const normalizedCount = count - params.min;
 const normalizedMax = params.max - params.min;
 const percentage = normalizedCount / normalizedMax;
@@ -357,8 +357,8 @@ function generateTags(){
    /* [NEW] START LOOP: for each tag in allTags: */
    for(let tag in allTags){
 
-    // const tagLinkHTML = '<li>' + calculcateTagClass(allTags[tag], tagsParam) + '</li>';
-    // console.log('tagLinkHTML:', tagLinkHTML);
+     const tagLinkHTML = '<li><a class="'+ calculateTagClass(allTags[tag], tagsParams) +'" href ="#tag-'+ tag +'">' + tag + '</a></li>';
+     console.log('tagLinkHTML:', tagLinkHTML);
 
      /*[NEW] generate code of a link and add it to allTagsHTML*/
      allTagsHTML += '<li><a href="#tag-'+ tag +'">'+ tag +'</a></li>' + ' (' + allTags[tag] + ') ';
