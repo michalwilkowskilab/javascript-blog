@@ -273,7 +273,8 @@ addClickListenersToAuthors();
 
 
 const optTagsListSelector = '.list.tags'
-
+const optCloudClassCount = 5;
+const optCloudClassPrefix = tag-size- 
 
 
 function calculateTagsParams(tags){
@@ -295,6 +296,9 @@ console.log(tags);
   return params;  
 }
 
+function calculateTagClass(count , params){
+  
+}
 
 function generateTags(){
   /* [NEW] create a new variable allTags with an empty object */
