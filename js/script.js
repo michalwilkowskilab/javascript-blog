@@ -368,7 +368,7 @@ function generateTags(){
      console.log('tagLinkHTML:', tagLinkHTML);
 
      /*[NEW] generate code of a link and add it to allTagsHTML*/
-     allTagsHTML += '<li><a href="#tag-'+ tag +'">'+ tag +'</a></li>' + ' (' + allTags[tag] + ') ';
+     allTagsHTML += tagLinkHTML;
      /*[NEW] END LOOP: for each tag in allTags: */
    }
    /* [NEW] add html from allTags to tagList */
