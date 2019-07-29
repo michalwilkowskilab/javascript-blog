@@ -256,9 +256,8 @@ function addClickListenersToAuthors(){
 
 addClickListenersToAuthors();
 
-
 const optTagsListSelector = '.list.tags'
-const optClouClassPrefix = 'tag-size-'
+
 
 function calculateTagsParams(tags){
 console.log(tags);
@@ -279,6 +278,8 @@ console.log(tags);
   return params;  
 }
 
+
+
 function calculateTagClass(count, params){
 console.log(count, params);
 
@@ -288,9 +289,14 @@ const normalizedMax = params.max - params.min;
 const percentage = normalizedCount / normalizedMax;
 const classNumber = Math.floor(percentage * (optCloudClassCount -1) + 1);
 console.log(classNumber);
+return classNumber
 }
 
+
+
 function generateTags(){
+
+ const optCloudClassPrefix = 'tag-size-' 
   /* [NEW] create a new variable allTags with an empty object */
   let allTags = {};
 
@@ -358,7 +364,7 @@ function generateTags(){
    /* [NEW] START LOOP: for each tag in allTags: */
    for(let tag in allTags){
 
-     const tagLinkHTML = '<li><a class="'+ calculateTagClass(allTags[tag], tagsParams) +'" href ="#tag-'+ tag +'">' + tag + '</a></li> (' + allTags[tag] + ') ';
+     const tagLinkHTML = '<li><a class="'+ optCloudClassPrefix + calculateTagClass(allTags[tag], tagsParams) +'" href ="#tag-'+ tag +'">' + tag + '</a></li> (' + allTags[tag] + ') ';
      console.log('tagLinkHTML:', tagLinkHTML);
 
      /*[NEW] generate code of a link and add it to allTagsHTML*/
