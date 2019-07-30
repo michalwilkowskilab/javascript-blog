@@ -96,8 +96,9 @@ body {
   display: block;
 }
 
-.post-author {
+.post-author a {
   font-style: italic;
+  margin-left: 5px;
 }
 
 .post-tags {

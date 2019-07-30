@@ -324,12 +324,6 @@ function generateTagsCloud(){
      /* START LOOP: for each tag */
      for(let tag of dataTagsArray){
  
-       /* generate HTML of the link */
-       
- 
-       /* add generated code to html variable */
-       
- 
        /* [NEW] check if this link is NOT already in allTags */
        if(!allTags.hasOwnProperty(tag)){
          /* [NEW] add generated code to allTags object */
@@ -346,7 +340,6 @@ function generateTagsCloud(){
     /* [NEW] add calculate tags parameters */
     const tagsParams = calculateTagsParams(allTags);
     console.log('tagsParams:', tagsParams);
- 
  
     /* [NEW] create variable for all links in HTML code */
     let allTagsHTML ='';
