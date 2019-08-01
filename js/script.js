@@ -368,6 +368,11 @@ generateTagsCloud();
 function generateAuthorsCloud(){
 
   const optCloudClassPrefix = 'tag-size-' 
+
+  let allTgas = {};
+
+  const articles = document.querySelectorAll(optArticleSelector);
+   console.log(articles); 
   
 }
 
