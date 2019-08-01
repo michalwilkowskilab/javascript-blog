@@ -375,9 +375,14 @@ function generateAuthorsCloud(){
   console.log(articles); 
   
   for(let article of articles){
-    const tagAuthor = article.getAttribute('data-author');
-    console.log(tagAuthor)
+    const tag = article.getAttribute('data-author');
+    console.log(tag)
 
+    if(!allTags.hasOwnProperty(tag)){
+      allTags[tag] = 1
+    } else {
+      allTags[tag]++;
+        }  
   }
   
   const authorsList = document.querySelector('.list.authors');
@@ -385,12 +390,18 @@ function generateAuthorsCloud(){
  
   const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
-
+  
   let allTagsHTML = '';
 
-  for(let tag in allTgas){
+  for(let tag in allTags){
 
+    const tagLinkHTML = '<li><a class="'+ optCloudClassPrefix + calculateTagClass(allTags[tag], tagsParams) +'" href ="#tag-'+ tag +'">' + tag + '</a>(' + allTags[tag] + ')</li> ';
+    console.log('tagLinkHTML:', tagLinkHTML);
+
+    allTagsHTML += tagLinkHTML;
   }
+
+  authorsList.innerHTML = allTagsHTML;
 }
 
 generateAuthorsCloud();
