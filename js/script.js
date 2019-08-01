@@ -304,11 +304,11 @@ function generateTagsCloud(){
    let allTags = {};
  
    /* find all articles */
-   const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(optArticleSelector);
    console.log(articles); 
  
    /* START LOOP: for every article: */
-   for(let article of articles){
+    for(let article of articles){
      console.log(article);
  
      /* find tags wrapper */
@@ -378,16 +378,14 @@ function generateAuthorsCloud(){
     const tagAuthor = article.getAttribute('data-author');
     console.log(tagAuthor)
 
-    for(let tag of tagAuthor){
-      if(!allTags.hasOwnProperty(tag)){
-        allTags[tag] = 1;
-      }
-      else{
-        allTags[tag]++;
-      }
-    }
-    
   }
+  
+  const authorsList = document.querySelector('.list.authors');
+  console.log(authorsList);
+ 
+  const tagsParams = calculateTagsParams(allTags);
+  console.log('tagsParams:', tagsParams);
+
 }
 
 generateAuthorsCloud();
