@@ -367,9 +367,8 @@ generateTagsCloud();
 
 function generateAuthorsCloud(){
 
-  const tagAuthors = document.querySelectorAll('.list.authors');
-  console.log('AUTORZYNY', tagAuthors);
-  tagAuthors.innerHTML = '';
+  const optCloudClassPrefix = 'tag-size-' 
+  
 }
 
 generateAuthorsCloud();
