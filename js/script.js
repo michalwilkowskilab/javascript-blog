@@ -372,8 +372,13 @@ function generateAuthorsCloud(){
   let allTgas = {};
 
   const articles = document.querySelectorAll(optArticleSelector);
-   console.log(articles); 
+  console.log(articles); 
   
+  for(let article of articles){
+    const tagAuthor = article.getAttribute('data-author');
+    console.log(tagAuthor)
+
+  }
 }
 
 generateAuthorsCloud();
