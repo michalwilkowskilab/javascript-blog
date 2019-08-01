@@ -386,6 +386,7 @@ function generateAuthorsCloud(){
   const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
 
+  let allTagsHTML = '';
 }
 
 generateAuthorsCloud();
