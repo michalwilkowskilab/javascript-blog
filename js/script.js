@@ -387,6 +387,10 @@ function generateAuthorsCloud(){
   console.log('tagsParams:', tagsParams);
 
   let allTagsHTML = '';
+
+  for(let tag in allTgas){
+
+  }
 }
 
 generateAuthorsCloud();
