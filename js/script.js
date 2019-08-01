@@ -369,7 +369,7 @@ function generateAuthorsCloud(){
 
   const optCloudClassPrefix = 'tag-size-' 
 
-  let allTgas = {};
+  let allTags = {};
 
   const articles = document.querySelectorAll(optArticleSelector);
   console.log(articles); 
@@ -378,6 +378,15 @@ function generateAuthorsCloud(){
     const tagAuthor = article.getAttribute('data-author');
     console.log(tagAuthor)
 
+    for(let tag of tagAuthor){
+      if(!allTags.hasOwnProperty(tag)){
+        allTags[tag] = 1;
+      }
+      else{
+        allTags[tag]++;
+      }
+    }
+    
   }
 }
 
