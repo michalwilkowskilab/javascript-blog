@@ -230,6 +230,7 @@ generateAutors();
 
 const optAuthorLinkSelector =  '.post-author a';
 
+
 function authorClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
@@ -254,10 +255,14 @@ function addClickListenersToAuthors(){
   }
 }
 
+
+
+
+
 addClickListenersToAuthors();
 
 const optTagsListSelector = '.list.tags'
-
+const optAuthorListSelector = '.list.authors'
 
 function calculateTagsParams(tags){
 console.log(tags);
@@ -310,9 +315,6 @@ function generateTagsCloud(){
      const tagLinks = article.querySelector('.post-tags .list');
      console.log(tagLinks);
  
-     /* make html variable with empty string */
-     let html = '';
-     
      /* get tags from data-tags attribute */
      const dataTags = article.getAttribute('data-tags');
      console.log(dataTags);
@@ -358,4 +360,18 @@ function generateTagsCloud(){
     tagList.innerHTML = allTagsHTML;
  }
 
- generateTagsCloud();
+generateTagsCloud();
+
+
+
+
+function generateAuthorsCloud(){
+
+  const tagAuthors = document.querySelectorAll('.list.authors');
+  console.log('AUTORZYNY', tagAuthors);
+  tagAuthors.innerHTML = '';
+}
+
+generateAuthorsCloud();
+
+
