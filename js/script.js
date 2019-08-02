@@ -229,40 +229,10 @@ function generateAutors(){
 generateAutors();
 
 const optAuthorLinkSelector =  '.post-author a';
-
-
-function authorClickHandler(event){
-  event.preventDefault();
-  const clickedElement = this;
-  console.log('Auhtor was clicked', clickedElement);
-
-  /*get attribute 'href' from clickedElement*/
-  const href = clickedElement.getAttribute('href');
-
-  generateTitleLinks('[data-author ="' + href + '"]');
-}
-  
-
-function addClickListenersToAuthors(){
-  /* find links to authors*/
-  const authors = document.querySelectorAll(optAuthorLinkSelector);
-
-  /*start LOOP for all links*/
-  for(let author of authors){
-    author.addEventListener('click', authorClickHandler);
-
-    /*end LOOP for each link*/
-  }
-}
-
-
-
-
-
-addClickListenersToAuthors();
-
 const optTagsListSelector = '.list.tags'
 const optAuthorListSelector = '.list.authors'
+const optAuthorCloudSelector = '.list.authors li a'
+console.log(optAuthorCloudSelector);
 
 function calculateTagsParams(tags){
 console.log(tags);
@@ -395,7 +365,7 @@ function generateAuthorsCloud(){
 
   for(let tag in allTags){
 
-    const tagLinkHTML = '<li><a class="'+ optCloudClassPrefix + calculateTagClass(allTags[tag], tagsParams) +'" href ="#tag-'+ tag +'">' + tag + '</a>(' + allTags[tag] + ')</li> ';
+    const tagLinkHTML = '<li><a class="'+ optCloudClassPrefix + calculateTagClass(allTags[tag], tagsParams) +'" href ="'+ tag +'">' + tag + '</a>(' + allTags[tag] + ')</li> ';
     console.log('tagLinkHTML:', tagLinkHTML);
 
     allTagsHTML += tagLinkHTML;
@@ -407,3 +377,40 @@ function generateAuthorsCloud(){
 generateAuthorsCloud();
 
 
+
+
+function authorClickHandler(event){
+  event.preventDefault();
+  const clickedElement = this;
+  console.log('Auhtor was clicked', clickedElement);
+
+  /*get attribute 'href' from clickedElement*/
+  const href = clickedElement.getAttribute('href');
+
+  generateTitleLinks('[data-author ="' + href + '"]');
+}
+  
+
+function addClickListenersToAuthors(){
+  /* find links to authors*/
+  const authors = document.querySelectorAll(optAuthorLinkSelector);
+  console.log(authors)
+  /*start LOOP for all links*/
+  for(let author of authors){
+    author.addEventListener('click', authorClickHandler);
+
+    /*end LOOP for each link*/
+  }
+}
+
+addClickListenersToAuthors();
+
+function addClickListenersToAthorsCloud(){
+  const authors = document.querySelectorAll(optAuthorCloudSelector);
+  console.log(authors)
+  
+  for(let author of authors){
+    author.addEventListener('click', authorClickHandler);
+  }
+}
+addClickListenersToAthorsCloud();
