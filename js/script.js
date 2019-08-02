@@ -232,7 +232,7 @@ const optAuthorLinkSelector =  '.post-author a';
 const optTagsListSelector = '.list.tags'
 const optAuthorListSelector = '.list.authors'
 const optAuthorCloudSelector = '.list.authors li a'
-console.log(optAuthorCloudSelector);
+const optTagsCloudSelector = '.list.tags li  '
 
 function calculateTagsParams(tags){
 console.log(tags);
@@ -405,7 +405,7 @@ function addClickListenersToAuthors(){
 
 addClickListenersToAuthors();
 
-function addClickListenersToAthorsCloud(){
+function addClickListenersToAuthorsCloud(){
   const authors = document.querySelectorAll(optAuthorCloudSelector);
   console.log(authors)
   
@@ -413,4 +413,16 @@ function addClickListenersToAthorsCloud(){
     author.addEventListener('click', authorClickHandler);
   }
 }
-addClickListenersToAthorsCloud();
+addClickListenersToAuthorsCloud();
+
+addClickListenersToTagsCloud();
+
+function addClickListenersToTagsCloud(){
+  const authors = document.querySelectorAll(optTagsCloudSelector);
+  console.log(authors)
+  
+  for(let author of authors){
+    author.addEventListener('click', tagClickHandler);
+  }
+}
+addClickListenersToTagsCloud();
