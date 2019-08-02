@@ -27,11 +27,11 @@ function titleClickHandler(event) {
 
   /*[DONE]get 'href' attribute from the clicked link */
 
-  const articleSelector = clickedElement.getAttribute('href'); 
+  const clickedArticleSelector = clickedElement.getAttribute('href'); 
 
   /*[DONE] find the correct article uisng the selector (value of 'herf' attribute) */
 
-  const targetArticle = document.querySelector(articleSelector); 
+  const targetArticle = document.querySelector(clickedArticleSelector); 
 
   /*[DONE] add class 'active' to the correct article */
 
@@ -253,8 +253,6 @@ console.log(tags);
   return params;  
 }
 
-
-
 function calculateTagClass(count, params){
 console.log(count, params);
 
@@ -332,9 +330,6 @@ function generateTagsCloud(){
 
 generateTagsCloud();
 
-
-
-
 function generateAuthorsCloud(){
 
   const optCloudClassPrefix = 'tag-size-' 
@@ -376,9 +371,6 @@ function generateAuthorsCloud(){
 
 generateAuthorsCloud();
 
-
-
-
 function authorClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
@@ -390,7 +382,6 @@ function authorClickHandler(event){
   generateTitleLinks('[data-author ="' + href + '"]');
 }
   
-
 function addClickListenersToAuthors(){
   /* find links to authors*/
   const authors = document.querySelectorAll(optAuthorLinkSelector);
