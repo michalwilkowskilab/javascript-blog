@@ -111,24 +111,32 @@ body {
 }
 
 /* Tags in right collumn*/
+
+
+
 .tag-size-1 {
   font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .tag-size-2 {
   font-size: 19px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .tag-size-3 {
   font-size: 23px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .tag-size-4 {
   font-size: 27px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .tag-size-5 {
   font-size: 31px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */
