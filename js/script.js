@@ -1,5 +1,15 @@
 'use strict';
 
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles',
+  optAuthorCloudSelector = '.list.authors li a',
+  optTagsCloudSelector = '.list.tags li',
+  optArticleTagsSelector = '.post-tags .list',
+  optArticleTagsElementSelector = '.post-tags .list li',
+  optAuthorLinkSelector =  '.post-author a',
+  optArticleAuthorSelector = ".post-author ";
+
 function titleClickHandler(event) {
   event.preventDefault();
   const clickedElement = this;
@@ -37,10 +47,6 @@ function titleClickHandler(event) {
 
   targetArticle.classList.add('active');
 }
-
-const optArticleSelector = '.post',
-  optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles';
 
 function generateTitleLinks(customSelector = '') {
   /* remove contents of titleList */
@@ -85,9 +91,6 @@ function generateTitleLinks(customSelector = '') {
 }
 
 generateTitleLinks();
-
-const optArticleTagsSelector = '.post-tags .list';
-const optArticleTagsElementSelector = '.post-tags .list li';
 
 function generateTags(){
   
@@ -180,8 +183,6 @@ function addClickListenersToTags(){
 
 addClickListenersToTags();
 
-const optArticleAuthorSelector = ".post-author "
-
 function generateAutors(){
 
   /* find class active in "article"*/
@@ -227,12 +228,6 @@ function generateAutors(){
 }
 
 generateAutors();
-
-const optAuthorLinkSelector =  '.post-author a';
-const optTagsListSelector = '.list.tags'
-const optAuthorListSelector = '.list.authors'
-const optAuthorCloudSelector = '.list.authors li a'
-const optTagsCloudSelector = '.list.tags li  '
 
 function calculateTagsParams(tags){
 console.log(tags);
