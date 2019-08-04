@@ -110,33 +110,28 @@ body {
   margin: 0 10px 0 0;
 }
 
-/* Tags in right collumn*/
-
-
+.list .tags li {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
 
 .tag-size-1 {
   font-size: 15px;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .tag-size-2 {
-  font-size: 19px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
 }
 
 .tag-size-3 {
-  font-size: 23px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 21px;
 }
 
 .tag-size-4 {
-  font-size: 27px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
 }
 
 .tag-size-5 {
-  font-size: 31px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 27px;
 }
-
 /*# sourceMappingURL=style.css.map */

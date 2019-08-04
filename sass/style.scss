@@ -121,12 +121,26 @@ body {
   }
 }
 
-/* Tags right collumn*/
+.list .tags li {
+  display: inline-flex;
+}
 
 .tag-size-1 {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .tag-size-2 {
-  font-size: 25px;
+  font-size: 18px;
+}
+
+.tag-size-3 {
+  font-size: 21px;
+}
+
+.tag-size-4 {
+  font-size: 24px;
+}
+
+.tag-size-5 {
+  font-size: 27px;
 }
