@@ -4,6 +4,10 @@ const templates = {
   articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
 }
 
+const template = {
+  tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML)
+}
+
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
@@ -120,7 +124,9 @@ function generateTags(){
     /* START LOOP: for each tag */
     for(let tag of articleTagsArray){
       /* generate HTML of the link */
-      const linkHTML = '<li><a href="#tag-'+ tag +'">'+ tag +'</a></li>';
+      const linkHTMLData = {id: tag, title: tag};
+      const linkHTML = template.tagLink(linkHTMLData);
+
       /* add generated code to html variable */
       html = html + linkHTML;
     /* END LOOP: for each tag */
