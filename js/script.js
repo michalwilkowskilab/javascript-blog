@@ -8,6 +8,10 @@ const template = {
   tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML)
 }
 
+const autor = {
+  authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML)
+}
+
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
@@ -228,7 +232,8 @@ function generateAutors(){
     const dataAuthor = author.getAttribute('data-author');
 
     /* generate HTML of the link */
-    const linkHTML = '<span>by</span><a href="'+ dataAuthor +'">'+ dataAuthor +'</a>';
+    const linkHTMLData = {id: dataAuthor, title: dataAuthor};
+    const linkHTML = autor.authorLink(linkHTMLData);
 
     /* add generated code to html variable */
     html = html + linkHTML;
