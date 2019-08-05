@@ -1,14 +1,8 @@
 'use strict';
 
 const templates = {
-  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
-}
-
-const template = {
-  tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML)
-}
-
-const autor = {
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
   authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML)
 }
 
@@ -129,7 +123,7 @@ function generateTags(){
     for(let tag of articleTagsArray){
       /* generate HTML of the link */
       const linkHTMLData = {id: tag, title: tag};
-      const linkHTML = template.tagLink(linkHTMLData);
+      const linkHTML = templates.tagLink(linkHTMLData);
 
       /* add generated code to html variable */
       html = html + linkHTML;
@@ -233,7 +227,7 @@ function generateAutors(){
 
     /* generate HTML of the link */
     const linkHTMLData = {id: dataAuthor, title: dataAuthor};
-    const linkHTML = autor.authorLink(linkHTMLData);
+    const linkHTML = templates.authorLink(linkHTMLData);
 
     /* add generated code to html variable */
     html = html + linkHTML;
