@@ -368,17 +368,22 @@ function generateAuthorsCloud(){
   const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
   
-  let allTagsHTML = '';
+  let allTagsData = {tags: []};
 
   for(let tag in allTags){
 
     const tagLinkHTML = '<li><a class="'+ optCloudClassPrefix + calculateTagClass(allTags[tag], tagsParams) +'" href ="'+ tag +'">' + tag + '</a>(' + allTags[tag] + ')</li> ';
     console.log('tagLinkHTML:', tagLinkHTML);
 
-    allTagsHTML += tagLinkHTML;
+    allTagsData.tags.push({
+      tag: tag,
+      count: allTags[tag],
+      className: calculateTagClass(allTags[tag], tagsParams)
+    });
   }
-
-  authorsList.innerHTML = allTagsHTML;
+  authorsList.innerHTML = templates.authorCloudLink(allTagsData);
+    console.log(authorsList);
+  
 }
 
 generateAuthorsCloud();
