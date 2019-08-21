@@ -90,7 +90,7 @@ function generateTitleLinks(customSelector = '') {
     html = html + linkHTML;
   }
 
-  titleList.innerHTML = html;
+  titleList.innerHTML= html;
 
   const links = document.querySelectorAll('.titles a');
 
